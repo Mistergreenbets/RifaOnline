@@ -55,7 +55,9 @@ transform:scale(1.05);
 .vendido{
 
 background:#e74c3c;
+
 cursor:not-allowed;
+
 opacity:0.8;
 
 }
