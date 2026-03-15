@@ -28,13 +28,16 @@ numeroAtual=numero;
 
 document.getElementById("numeroSelecionado").innerText=numero;
 
-document.getElementById("modal").style.display="block";
+document.getElementById("modal").style.display="flex";
 
 }
 
 function fecharModal(){
 
 document.getElementById("modal").style.display="none";
+
+document.getElementById("nome").value="";
+document.getElementById("telefone").value="";
 
 }
 
@@ -43,6 +46,14 @@ function registrarVenda(){
 let nome=document.getElementById("nome").value;
 
 let telefone=document.getElementById("telefone").value;
+
+if(!nome || !telefone){
+
+alert("Preencha nome e telefone");
+
+return;
+
+}
 
 fetch(urlAPI,{
 
@@ -64,9 +75,21 @@ telefone:telefone
 
 .then(()=>{
 
-fecharModal();
+// BLOQUEAR NÚMERO NA TELA
 
-carregarNumeros();
+document.querySelectorAll(".numero").forEach(el=>{
+
+if(el.innerText == numeroAtual){
+
+el.classList.add("vendido");
+
+el.onclick = null; // remove clique
+
+}
+
+});
+
+fecharModal();
 
 })
 
@@ -82,11 +105,13 @@ fetch(urlAPI)
 
 document.querySelectorAll(".numero").forEach(el=>{
 
-let num=el.innerText;
+let num = el.innerText;
 
 if(data.includes(num)){
 
 el.classList.add("vendido");
+
+el.onclick = null; // bloqueia clique
 
 }
 
@@ -99,3 +124,4 @@ el.classList.add("vendido");
 criarNumeros();
 
 carregarNumeros();
+
