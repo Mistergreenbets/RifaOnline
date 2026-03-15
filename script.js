@@ -1,4 +1,4 @@
-const urlAPI = "COLE_AQUI_URL_DO_APPS_SCRIPT";
+const urlAPI = "https://script.google.com/macros/s/AKfycbyS5QrxORvPeleMbrOXW9LzG9a2nYsjLnhrTVsKvCNLXaCvNHc28hPaclt3wPsoeyum/exec";
 
 const grid = document.getElementById("grid");
 
