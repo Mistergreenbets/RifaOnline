@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Sistema de Rifa</title>
+
+<link rel="stylesheet" href="style.css">
+
+</head>
+<body>
+
+<div class="container">
+
+<h1>Rifa Online</h1>
+
+<div id="grid"></div>
+
+</div>
+
+<div id="modal" class="modal">
+
+<div class="modal-content">
+
+<h2>Registrar venda</h2>
+
+<p>Número: <span id="numeroSelecionado"></span></p>
+
+<input type="text" id="nome" placeholder="Nome do comprador">
+
+<input type="text" id="telefone" placeholder="Telefone">
+
+<button onclick="registrarVenda()">Confirmar</button>
+
+<button onclick="fecharModal()">Cancelar</button>
+
+</div>
+
+</div>
+
+<script src="script.js"></script>
+
+</body>
+</html>
