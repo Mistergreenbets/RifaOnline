@@ -1,4 +1,4 @@
-const urlAPI = "https://script.google.com/macros/s/AKfycbyS5QrxORvPeleMbrOXW9LzG9a2nYsjLnhrTVsKvCNLXaCvNHc28hPaclt3wPsoeyum/exec";
+const urlAPI = "https://script.google.com/macros/s/AKfycbyjvdC2MiqosRmeKjMLtAWE5vVaAG_yYaTwb5g_X69xAIf6cFVnhQJHkd9Lg1BYGikI/exec";
 
 const grid = document.getElementById("grid");
 
