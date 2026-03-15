@@ -20,23 +20,33 @@
 
 <div id="modal" class="modal">
 
-<div class="modal-content">
+  <div class="modal-content">
 
-<h2>Registrar venda</h2>
+    <h2>Registrar venda</h2>
 
-<p>Número: <strong id="numeroSelecionado"></strong></p>
+    <p class="numero-info">
+      Número: <strong id="numeroSelecionado"></strong>
+    </p>
 
-<label>Nome do comprador</label>
-<input type="text" id="nome" placeholder="Digite o nome">
+    <label>Nome do comprador</label>
+    <input type="text" id="nome" placeholder="Digite o nome">
 
-<label>Telefone</label>
-<input type="text" id="telefone" placeholder="(00) 00000-0000">
+    <label>Telefone</label>
+    <input type="tel" id="telefone" placeholder="(00) 00000-0000">
 
-<button onclick="registrarVenda()">Confirmar venda</button>
+    <div class="botoes">
 
-<button onclick="fecharModal()">Cancelar</button>
+      <button class="confirmar" onclick="registrarVenda()">
+        Confirmar venda
+      </button>
 
-</div>
+      <button class="cancelar" onclick="fecharModal()">
+        Cancelar
+      </button>
+
+    </div>
+
+  </div>
 
 </div>
 
