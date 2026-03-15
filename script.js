@@ -10,11 +10,13 @@ for(let i=1;i<=200;i++){
 
 let div = document.createElement("div");
 
-div.className="numero";
+div.className = "numero";
 
-div.innerText=i;
+div.innerText = i;
 
-div.onclick=()=>abrirModal(i);
+div.dataset.numero = i;
+
+div.onclick = () => abrirModal(i);
 
 grid.appendChild(div);
 
@@ -24,28 +26,28 @@ grid.appendChild(div);
 
 function abrirModal(numero){
 
-numeroAtual=numero;
+numeroAtual = numero;
 
-document.getElementById("numeroSelecionado").innerText=numero;
+document.getElementById("numeroSelecionado").innerText = numero;
 
-document.getElementById("modal").style.display="flex";
+document.getElementById("modal").style.display = "flex";
 
 }
 
 function fecharModal(){
 
-document.getElementById("modal").style.display="none";
+document.getElementById("modal").style.display = "none";
 
-document.getElementById("nome").value="";
-document.getElementById("telefone").value="";
+document.getElementById("nome").value = "";
+document.getElementById("telefone").value = "";
 
 }
 
 function registrarVenda(){
 
-let nome=document.getElementById("nome").value;
+let nome = document.getElementById("nome").value;
 
-let telefone=document.getElementById("telefone").value;
+let telefone = document.getElementById("telefone").value;
 
 if(!nome || !telefone){
 
@@ -71,23 +73,23 @@ telefone:telefone
 
 })
 
-.then(res=>res.json())
+.then(res => res.json())
 
 .then(()=>{
 
 // BLOQUEAR NÚMERO NA TELA
 
-document.querySelectorAll(".numero").forEach(el=>{
+let numeroDiv = document.querySelector(`[data-numero="${numeroAtual}"]`);
 
-if(el.innerText == numeroAtual){
+if(numeroDiv){
 
-el.classList.add("vendido");
+numeroDiv.classList.add("vendido");
 
-el.onclick = null; // remove clique
+numeroDiv.onclick = null;
+
+numeroDiv.style.pointerEvents = "none";
 
 }
-
-});
 
 fecharModal();
 
@@ -103,15 +105,17 @@ fetch(urlAPI)
 
 .then(data=>{
 
-document.querySelectorAll(".numero").forEach(el=>{
+data.forEach(numero=>{
 
-let num = el.innerText;
+let numeroDiv = document.querySelector(`[data-numero="${numero}"]`);
 
-if(data.includes(num)){
+if(numeroDiv){
 
-el.classList.add("vendido");
+numeroDiv.classList.add("vendido");
 
-el.onclick = null; // bloqueia clique
+numeroDiv.onclick = null;
+
+numeroDiv.style.pointerEvents = "none";
 
 }
 
@@ -125,3 +129,5 @@ criarNumeros();
 
 carregarNumeros();
 
+// atualização automática a cada 5 segundos
+setInterval(carregarNumeros, 5000);
