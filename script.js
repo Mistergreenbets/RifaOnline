@@ -12,11 +12,13 @@ let div = document.createElement("div");
 
 div.className = "numero";
 
-div.innerText = i;
+let numeroFormatado = String(i).padStart(3,"0");
 
-div.dataset.numero = i;
+div.innerText = numeroFormatado;
 
-div.onclick = () => abrirModal(i);
+div.dataset.numero = numeroFormatado;
+
+div.onclick = () => abrirModal(numeroFormatado);
 
 grid.appendChild(div);
 
