@@ -71,11 +71,11 @@ height:100%;
 
 background:rgba(0,0,0,0.6);
 
-display:flex;
 align-items:center;
 justify-content:center;
 
-padding:20px;
+padding:15px;
+z-index:1000;
 
 }
 
@@ -84,7 +84,7 @@ padding:20px;
 background:white;
 
 width:100%;
-max-width:350px;
+max-width:380px;
 
 padding:25px;
 
@@ -92,7 +92,8 @@ border-radius:12px;
 
 box-shadow:0 10px 25px rgba(0,0,0,0.2);
 
-text-align:left;
+display:flex;
+flex-direction:column;
 
 }
 
@@ -103,29 +104,50 @@ text-align:center;
 
 }
 
+.numero-info{
+
+text-align:center;
+font-size:18px;
+margin-bottom:15px;
+
+}
+
+.modal-content label{
+
+font-size:14px;
+margin-top:8px;
+
+}
+
 .modal-content input{
 
 width:100%;
 
 padding:12px;
 
-margin:8px 0;
+margin-top:5px;
 
 border:1px solid #ddd;
-
 border-radius:6px;
 
 font-size:16px;
 
 }
 
-.modal-content button{
+.botoes{
 
-width:100%;
+display:flex;
+flex-direction:column;
+
+gap:10px;
+
+margin-top:15px;
+
+}
+
+.botoes button{
 
 padding:12px;
-
-margin-top:10px;
 
 border:none;
 
@@ -137,14 +159,14 @@ cursor:pointer;
 
 }
 
-.modal-content button:first-of-type{
+.confirmar{
 
 background:#27ae60;
 color:white;
 
 }
 
-.modal-content button:last-of-type{
+.cancelar{
 
 background:#e74c3c;
 color:white;
@@ -173,6 +195,23 @@ cursor:pointer;
 
 height:50px;
 font-size:14px;
+
+}
+
+}
+
+@media (max-width:480px){
+
+.modal-content{
+
+max-width:100%;
+padding:20px;
+
+}
+
+.modal-content input{
+
+font-size:16px;
 
 }
 
