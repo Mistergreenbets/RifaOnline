@@ -19,19 +19,36 @@ padding:20px;
 #grid{
 
 display:grid;
-grid-template-columns:repeat(10,1fr);
+grid-template-columns:repeat(auto-fit, minmax(60px, 1fr));
 gap:10px;
+max-width:900px;
+margin:auto;
 
 }
 
 .numero{
 
-padding:15px;
+display:flex;
+align-items:center;
+justify-content:center;
+
+height:60px;
+
 background:#2ecc71;
 color:white;
-border-radius:6px;
-cursor:pointer;
 font-weight:bold;
+
+border-radius:8px;
+
+cursor:pointer;
+
+transition:0.2s;
+
+}
+
+.numero:hover{
+
+transform:scale(1.05);
 
 }
 
@@ -76,5 +93,16 @@ button{
 padding:10px;
 margin:5px;
 cursor:pointer;
+
+}
+
+@media (max-width:600px){
+
+.numero{
+
+height:50px;
+font-size:14px;
+
+}
 
 }
