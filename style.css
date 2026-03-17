@@ -16,6 +16,11 @@ padding:20px;
   
 }
 
+h1{
+    color: white;
+    text-align: center;
+}
+
 #grid{
 
 display:grid;
